@@ -61,16 +61,19 @@ const app = new Vue({
             cnv = document.getElementById('drawing');
             console.log(cnv);
 
-            cnv.toBlob(function(blob) {
-                var newImg = document.createElement('img'), url = URL.createObjectURL(blob);
+            var dataURL = cnv.toDataURL();
+            console.log(dataURL);
+            download(dataURL, 'testfile.png');
+            // cnv.toBlob(function(blob) {
+            //     var newImg = document.createElement('img'), url = URL.createObjectURL(blob);
 
-                newImg.onload = function() {
-                    URL.revokeObjectURL(url);
-                };
+            //     newImg.onload = function() {
+            //         URL.revokeObjectURL(url);
+            //     };
 
-                newImg.src = url;
-                document.body.appendChild(newImg);
-            })
+            //     newImg.src = url;
+            //     document.body.appendChild(newImg);
+            // })
         }
     }
 })
