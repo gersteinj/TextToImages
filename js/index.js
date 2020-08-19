@@ -1,7 +1,6 @@
 const app = new Vue({
     el: '#tti-app',
     data: {
-        // instructionString: 'Enter some text',
         textString: 'enter your text',
         charactersRemaining: 50,
         textColor: 'black',
@@ -12,10 +11,19 @@ const app = new Vue({
         canvas: 'null'
     },
     directives: {
-        insertMessage: function (canvasElement, binding) {
+        insertMessage: function (canvasElement, binding, vnode) {
+            // example of accessing data
+            // console.log(vnode.context.textColor);
+            
             // get canvas context
             var ctx = canvasElement.getContext('2d');
-            // clear the canvas
+            
+            // fill canvas with background color
+            ctx.fillStyle = vnode.context.backgroundColor;
+            ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+            // draw text
+            ctx.fillStyle = vnode.context.textColor;
             ctx.font = '20px serif';
             ctx.fillText(binding.value, 10, 50);
         }
