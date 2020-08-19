@@ -1,13 +1,13 @@
 const app = new Vue({
     el: '#tti-app',
     data: {
-        textString: 'enter your text',
+        textString: 'Type in some text',
         charactersRemaining: 50,
         textColor: 'black',
         backgroundColor: 'aliceblue',
         textBoxPadding: 25,
         textSize: 30,
-        textFont: 'Averia Gruesa Libre',
+        textFont: 'sans-serif',
         canvas: 'null'
     },
     directives: {
