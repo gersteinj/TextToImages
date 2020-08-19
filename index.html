@@ -28,10 +28,11 @@
         </div>
         
         <p>Creating an image of: <span v-bind:style="{ color: textColor, backgroundColor: backgroundColor, padding:textBoxPadding }">{{ textString }}</span></p>
+        
+        <canvas id="drawing" style="border:1px solid black" v-insert-message="textString"></canvas>
     </div>
 
 
-    <!-- <canvas id="main" style="border:1px solid black"></canvas> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="js/tti.js"></script> -->
     <script src="js/index.js"></script>
