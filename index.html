@@ -8,9 +8,17 @@
 </head>
 <body>
     <h1>Text to Images</h1>
-    <canvas id="main" style="border:1px solid black"></canvas>
+    <div id="word-preview">
+        <p>Enter some text</p>
+        <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
+        <p>{{ charactersRemaining }} characters left</p>
+        <p>Creating an image of: {{ textString }}</p>
+    </div>
+    
+    
+    <!-- <canvas id="main" style="border:1px solid black"></canvas> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/tti.js"></script>
+    <!-- <script src="js/tti.js"></script> -->
     <script src="js/index.js"></script>
 </body>
 </html>
