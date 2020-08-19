@@ -16,7 +16,7 @@
                 <!-- <label for="text-entry">Enter your text ({{ charactersRemaining }}/50)</label> -->
                 <label for="text-entry">Enter your text</label>
                 <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
-                <button id="save" v-on:click="notify">Save Image</button>
+                <button id="save" v-on:click="makeImage">Save Image</button>
             </div>
 
             <div style="display:flex;">

@@ -56,6 +56,21 @@ const app = new Vue({
         },
         notify: function (event) {
             alert(event);
+        },
+        makeImage: function () {
+            cnv = document.getElementById('drawing');
+            console.log(cnv);
+
+            cnv.toBlob(function(blob) {
+                var newImg = document.createElement('img'), url = URL.createObjectURL(blob);
+
+                newImg.onload = function() {
+                    URL.revokeObjectURL(url);
+                };
+
+                newImg.src = url;
+                document.body.appendChild(newImg);
+            })
         }
     }
 })
