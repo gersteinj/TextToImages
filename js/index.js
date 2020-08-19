@@ -4,13 +4,16 @@ const app = new Vue({
         // instructionString: 'Enter some text',
         textString: '',
         charactersRemaining: 50,
-        foreground: 'black',
-        background: 'red',
-        textSize: 30,
-        textFont: 'serif'
+        styleObject: {
+            color: 'black',
+            backgroundColor: 'red',
+            padding: '5px'
+        }
+            // textSize: 30,
+            // textFont: 'serif'
     },
     methods: {
-        countCharacters: function() {
+        countCharacters: function () {
             this.charactersRemaining = 50 - this.textString.length;
         }
     }

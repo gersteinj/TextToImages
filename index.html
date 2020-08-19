@@ -12,7 +12,7 @@
         <p>Enter some text</p>
         <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
         <p>{{ charactersRemaining }} characters left</p>
-        <p>Creating an image of: {{ textString }}</p>
+        <p>Creating an image of: <span v-bind:style="styleObject">{{ textString }}</span></p>
     </div>
     
     
