@@ -27,7 +27,7 @@
         <input type="text" name="background-color" id="background-color" v-model="backgroundColor">
         </div>
         
-        <p>Creating an image of: <span v-bind:style="{ color: textColor, backgroundColor: backgroundColor, padding:textBoxPadding }">{{ textString }}</span></p>
+        <!-- <p>Creating an image of: <span v-bind:style="{ color: textColor, backgroundColor: backgroundColor}">{{ textString }}</span></p> -->
         
         <canvas id="drawing" style="border:1px solid black" v-insert-message="textString"></canvas>
     </div>

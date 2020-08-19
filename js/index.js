@@ -4,28 +4,44 @@ const app = new Vue({
         textString: 'enter your text',
         charactersRemaining: 50,
         textColor: 'black',
-        backgroundColor: 'red',
-        textBoxPadding: '5px',
+        backgroundColor: 'aliceblue',
+        textBoxPadding: 25,
         textSize: 30,
-        textFont: 'serif',
+        textFont: 'Averia Gruesa Libre',
         canvas: 'null'
     },
     directives: {
         insertMessage: function (canvasElement, binding, vnode) {
             // example of accessing data
             // console.log(vnode.context.textColor);
-            
+
             // get canvas context
             var ctx = canvasElement.getContext('2d');
+
+            // calculate size
+            ctx.font = `${vnode.context.textSize}px ${vnode.context.textFont}`;
+            var textSizing = ctx.measureText(binding.value);
+            var textWidth = Math.floor(textSizing['width']);
+            var textHeight = Math.floor(textSizing['actualBoundingBoxAscent'] + textSizing['actualBoundingBoxDescent']);
+
+            // console.log(`${canvasElement.width} x ${canvasElement.height}`);
+            // console.log(`Text size: ${textWidth} x ${textHeight}. Padding: ${vnode.context.textBoxPadding}`);
+            
+            // dynamic resize
+            canvasElement.width = textWidth + vnode.context.textBoxPadding;
+            canvasElement.height = textHeight + vnode.context.textBoxPadding;
+            // console.log(`${canvasElement.width} x ${canvasElement.height}`);
             
             // fill canvas with background color
             ctx.fillStyle = vnode.context.backgroundColor;
             ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
 
             // draw text
+            ctx.font = `${vnode.context.textSize}px ${vnode.context.textFont}`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
             ctx.fillStyle = vnode.context.textColor;
-            ctx.font = '20px serif';
-            ctx.fillText(binding.value, 10, 50);
+            ctx.fillText(binding.value, canvasElement.width/2, canvasElement.height/2);
         }
     },
     methods: {
