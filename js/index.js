@@ -1,16 +1,14 @@
 const app = new Vue({
-    el: '#word-preview',
+    el: '#tti-app',
     data: {
         // instructionString: 'Enter some text',
         textString: '',
         charactersRemaining: 50,
-        styleObject: {
-            color: 'black',
-            backgroundColor: 'red',
-            padding: '5px'
-        }
-            // textSize: 30,
-            // textFont: 'serif'
+        textColor: 'black',
+        backgroundColor: 'red',
+        textBoxPadding: '5px',
+        textSize: 30,
+        textFont: 'serif'
     },
     methods: {
         countCharacters: function () {

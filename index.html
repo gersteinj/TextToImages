@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
     <title>Text to Images</title>
 </head>
+
 <body>
     <h1>Text to Images</h1>
-    <div id="word-preview">
-        <p>Enter some text</p>
-        <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
-        <p>{{ charactersRemaining }} characters left</p>
-        <p>Creating an image of: <span v-bind:style="styleObject">{{ textString }}</span></p>
+    <div id="tti-app">
+        
+        <div style="display:flex;">
+            <label for="text-entry">Enter your text ({{ charactersRemaining }}/50)</label>
+            <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
+        </div>
+        
+        <p>Creating an image of: <span v-bind:style="{ color: textColor, backgroundColor: backgroundColor, padding:textBoxPadding }">{{ textString }}</span></p>
     </div>
-    
-    
+
+
     <!-- <canvas id="main" style="border:1px solid black"></canvas> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="js/tti.js"></script> -->
     <script src="js/index.js"></script>
 </body>
+
 </html>
