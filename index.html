@@ -16,6 +16,7 @@
                 <!-- <label for="text-entry">Enter your text ({{ charactersRemaining }}/50)</label> -->
                 <label for="text-entry">Enter your text</label>
                 <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
+                <button id="save" v-on:click="notify">Save Image</button>
             </div>
 
             <div style="display:flex;">
@@ -37,8 +38,6 @@
                 <label for="font-size">Font size (in pixels)</label>
                 <input type="text" name="font-size" id="font-size" v-model="textSize">
             </div>
-
-            <!-- <p>Creating an image of: <span v-bind:style="{ color: textColor, backgroundColor: backgroundColor}">{{ textString }}</span></p> -->
 
             <canvas id="drawing" style="border:1px solid black" v-insert-message="textString"></canvas>
         </div>

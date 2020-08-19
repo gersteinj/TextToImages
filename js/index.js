@@ -36,6 +36,12 @@ const app = new Vue({
             ctx.fillStyle = vnode.context.backgroundColor;
             ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
 
+            // // shadow
+            // ctx.shadowColor = '#999';
+            // ctx.shadowBlur = 4;
+            // ctx.shadowOffsetX = 5;
+            // ctx.shadowOffsetY = 5;
+
             // draw text
             ctx.font = `${vnode.context.textSize}px ${vnode.context.textFont}`;
             ctx.textAlign = 'center';
@@ -47,6 +53,9 @@ const app = new Vue({
     methods: {
         countCharacters: function () {
             this.charactersRemaining = 50 - this.textString.length;
+        },
+        notify: function (event) {
+            alert(event);
         }
     }
 })
