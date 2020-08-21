@@ -6,8 +6,8 @@ const app = new Vue({
         textColor: 'black',
         backgroundColor: 'aliceblue',
         textBoxPadding: 25,
-        textSize: 30,
-        textFont: 'sans-serif',
+        textSize: 50,
+        textFont: 'Architects Daughter',
         canvas: 'null'
     },
     directives: {
@@ -63,7 +63,7 @@ const app = new Vue({
 
             var dataURL = cnv.toDataURL();
             console.log(dataURL);
-            download(dataURL, 'testfile.png');
+            download(dataURL, `${this.textString}.png`);
             // cnv.toBlob(function(blob) {
             //     var newImg = document.createElement('img'), url = URL.createObjectURL(blob);
 
