@@ -33,12 +33,18 @@
 
             <div style="display:flex;">
                 <label for="font-face">Font name</label>
-                <input type="text" list="fonts" name="font-face" id="font-face" v-model="textFont">
+                <select v-model="textFont">
+                    <option disabled value="">Please select one</option>
+                    <option>Architects Daughter</option>
+                    <option>Comic Neue</option>
+                    <option value="monospace">Default Monospace</option>
+                </select>
+                <!-- <input type="text" list="fonts" name="font-face" id="font-face" v-model="textFont">
                 <datalist id="fonts">
                     <option value="serif"></option>
                     <option value="sans-serif"></option>
                     <option value="monospace"></option>
-                </datalist>
+                </datalist> -->
             </div>
 
             <div style="display:flex;">

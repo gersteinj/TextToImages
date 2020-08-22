@@ -7,7 +7,7 @@ const app = new Vue({
         backgroundColor: 'aliceblue',
         textBoxPadding: 25,
         textSize: 50,
-        textFont: 'Architects Daughter',
+        textFont: 'Comic Neue',
         canvas: 'null'
     },
     directives: {
