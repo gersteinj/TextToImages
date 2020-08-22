@@ -17,7 +17,7 @@
             <div style="display:flex;">
                 <!-- <label for="text-entry">Enter your text ({{ charactersRemaining }}/50)</label> -->
                 <label for="text-entry">Enter your text</label>
-                <input type="text" id="text-entry" v-model="textString" v-on:input="countCharacters"></input>
+                <input type="text" id="text-entry" v-model="textString" v-on:input="splitString"></input>
                 <button id="save" v-on:click="makeImage">Save Image</button>
             </div>
 

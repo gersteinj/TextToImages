@@ -2,6 +2,7 @@ const app = new Vue({
     el: '#tti-app',
     data: {
         textString: 'Type in some text',
+        wordArray: [],
         charactersRemaining: 50,
         textColor: 'black',
         backgroundColor: 'aliceblue',
@@ -54,6 +55,10 @@ const app = new Vue({
         countCharacters: function () {
             this.charactersRemaining = 50 - this.textString.length;
         },
+        splitString: function() {
+            this.wordArray = this.textString.split(",");
+            console.log(this.wordArray);
+        },     
         notify: function (event) {
             alert(event);
         },
