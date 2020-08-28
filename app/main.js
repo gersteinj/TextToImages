@@ -14,4 +14,5 @@ define(function (require) {
     // load any app-specific modules
     // with a relative require call like:
     var draw = require('./draw');
+    var formHandler = require('./formHandler');
 })

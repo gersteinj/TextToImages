@@ -1,5 +1,6 @@
 define(function (require) {
 
+
     var canvData = require('./canvSetup');
 
     var canv = canvData.canvas;
@@ -19,19 +20,28 @@ define(function (require) {
 
     canvData.textSetup();
     canvData.canvasResize();
-
+    
     drawBackground();
     drawText();
-
+    
     console.log(canvData.textString);
+    
+    return {
+        redraw: function () {
+            drawBackground();
+            drawText();
+        },
+        'sampleString': 'sample string from draw.js',
+        'textString': canvData.textString
+    };
 
-    document.getElementById('word').addEventListener('input', function () {
-        console.log(this.value);
-        canvData.textString = this.value;
-        canvData.canvasResize();
-        drawBackground();
-        drawText();
-    });
+    // document.getElementById('word').addEventListener('input', function () {
+    //     console.log(this.value);
+    //     canvData.textString = this.value;
+    //     canvData.canvasResize();
+    //     drawBackground();
+    //     drawText();
+    // });
 });
 
 
