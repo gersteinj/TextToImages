@@ -15,13 +15,14 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
             var a = document.createElement('a');
             document.body.appendChild(a);
             a.innerText = 'this will be a download link';
-            // a.style = 'display: none';
+            a.style = 'display: none';
 
             var url = URL.createObjectURL(blob);
             a.href = url;
             a.download = `tti-${canvData.textString}.png`;
             a.click();
             URL.revokeObjectURL(url);
+            document.body.removeChild(document.body.lastChild);
         });
     })
 });
