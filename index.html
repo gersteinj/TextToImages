@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to Images</title>
+    <link href="https://unpkg.com/bonsai.css@latest/dist/bonsai.min.css" rel="stylesheet">
     <script data-main="app" src="lib/require.js"></script>
 </head>
+
 <body>
     <h1 id="title">Text to Images</h1>
-    <canvas id="preview" width="320" height="240" style="border: solid 1px black;"></canvas>
-    <hr>
-        <input type="text" id="word">
-        <button id="savebtn">Save Image</button>
-        <div id="download-holder"></div>
+    <canvas id="preview" style="border: solid 1px black;"></canvas>
+    <form>
+        <legend>Basic controls for text to images</legend>
+        <div class="group">
+            <input type="text" id="word" placeholder="enter your word">
+            <button id="savebtn" class="pure-button pure-button-primary">Save Image</button>
+        </div>
+
+        <legend>Advanced Options</legend>
+        <div class="group">
+            <label for="text-color">Text Color
+                <input type="color" name="text-color" id="text-color" value="orchid">
+            </label>
+            <label for="bg-color">BG Color
+                <input type="color" name="bg-color" id="bg-color" value="orchid">
+            </label>
+        </div>
+    </form>
+
+
 </body>
+
 </html>
