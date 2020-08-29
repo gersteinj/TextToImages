@@ -5,32 +5,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Text to Images</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
         <script data-main="app" src="lib/require.js"></script>
     </head>
 
     <body>
         <h1 id="title">Text to Images</h1>
+        <p>An updated version of my original Text to Images tool, this time as a web app so you don't need to install and run Python.</p>
         <canvas id="preview" style="border: solid 1px black;"></canvas>
         <form>
-            <legend>Basic controls for text to images</legend>
+            <fieldset>
+                <legend>Basic Controls</legend>
+                <input type="teFxt" name="word" id="word" placeholder="enter your word">
+                <button id="savebtn" type="button">Save Image</button>
+            </fieldset>
+            <fieldset>
+                <legend>Advanced Controls</legend>
+                <label for="text-color">Text Color</label>
+                <input type="color" name="text-color" id="text-color" value="#cccccc">
 
-            <input type="text" id="word" placeholder="enter your word">
-            <button id="savebtn" type="button">Save Image</button>
+                <label for="bg-color">BG Color</label>
+                <input type="color" name="bg-color" id="bg-color" value="#333333">
 
-            <legend>Advanced Options</legend>
+                <label for="text-font">Choose a Font</label>
+                <input type="text" name="text-font" id="text-font" placeholder="sans-serif is a safe default">
+                <button id="setfontbtn" type="button" disabled>Set Font</button>
 
-            <label for="text-color">Text Color
-                <input type="color" name="text-color" id="text-color" value="#ffffff">
-            </label>
-            <label for="bg-color">BG Color
-                <input type="color" name="bg-color" id="bg-color" value="#000000">
-            </label>
-
-            <label for="text-font">Choose a Font
-                <input type="text" name="text-font" id="text-font" placeholder="Serif is a safe default">
-            </label>
-            <button id="setfontbtn" type="button">Set Font</button>
-
+            </fieldset>
         </form>
 
     </body>

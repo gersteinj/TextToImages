@@ -8,6 +8,15 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
     });
 
+    // set font
+    document.getElementById('text-font').addEventListener('input', function() {
+        console.log("you're entering something for font")
+        canvData.textFont = this.value;
+        canvData.textSetup();
+        canvData.canvasResize();
+        draw.redraw();
+    })
+
     // save button
     document.getElementById('savebtn').addEventListener('click', function () {
         console.log('saving!');
