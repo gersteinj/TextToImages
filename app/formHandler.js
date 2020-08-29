@@ -17,6 +17,15 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
     })
 
+    // set text size
+    document.getElementById('text-size').addEventListener('input', function() {
+        console.log("You're setting the font size");
+        canvData.textSize = this.value;
+        canvData.textSetup();
+        canvData.canvasResize();
+        draw.redraw();
+    })
+
     // save button
     document.getElementById('savebtn').addEventListener('click', function () {
         console.log('saving!');

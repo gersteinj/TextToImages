@@ -18,7 +18,7 @@
         <form>
             <fieldset>
                 <legend>Basic Controls</legend>
-                <input type="teFxt" name="word" id="word" placeholder="enter your word">
+                <input type="text" name="word" id="word" placeholder="enter your word">
                 <button id="savebtn" type="button">Save Image</button>
             </fieldset>
             <fieldset>
@@ -32,6 +32,9 @@
                 <label for="text-font">Choose a Font</label>
                 <input type="text" name="text-font" id="text-font" placeholder="sans-serif is a safe default">
                 <button id="setfontbtn" type="button" disabled>Set Font</button>
+
+                <label for="text-size">Text Size</label>
+                <input type="range" name="text-size" id="text-size" min="30" max="150" value="50">
 
             </fieldset>
         </form>

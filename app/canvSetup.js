@@ -11,11 +11,11 @@ define( function() {
         'textString' : 'abcde',
         'bgColor' : 'antiquewhite',
         'textColor' : '#154360',
-        'textPxls' : 48,
+        'textSize' : 48,
         'textFont' : 'Averia Libre',
         'textSetup' : function () {
             console.log('setting up text');
-            ctx.font = `${this.textPxls}px ${this.textFont}`;
+            ctx.font = `${this.textSize}px ${this.textFont}`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
         },
