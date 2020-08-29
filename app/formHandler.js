@@ -1,5 +1,6 @@
 define(['./draw', './canvSetup'], function (draw, canvData) {
-        document.getElementById('word').addEventListener('input', function () {
+    // text input
+    document.getElementById('word').addEventListener('input', function () {
         console.log(this.value);
         canvData.textString = this.value;
         canvData.textSetup();
@@ -7,11 +8,12 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
     });
 
+    // save button
     document.getElementById('savebtn').addEventListener('click', function () {
         console.log('saving!');
         // var dataURL = canvData.canvas.toDataURL('image/png');
         // console.log(dataURL);
-        canvData.canvas.toBlob( blob => {
+        canvData.canvas.toBlob(blob => {
             var a = document.createElement('a');
             document.body.appendChild(a);
             a.innerText = 'this will be a download link';
@@ -24,5 +26,21 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
             URL.revokeObjectURL(url);
             document.body.removeChild(document.body.lastChild);
         });
-    })
+    });
+
+    // text color
+    document.getElementById('text-color').addEventListener('input', function () {
+        canvData.textColor = this.value;
+        console.log(this.value);
+        draw.redraw();
+        console.log(this.parentElement);
+    });
+    
+    // bg color
+    document.getElementById('bg-color').addEventListener('input', function () {
+        canvData.bgColor = this.value;
+        console.log(this.value);
+        draw.redraw();
+    });
+
 });

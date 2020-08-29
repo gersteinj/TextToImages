@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to Images</title>
-    <link href="https://unpkg.com/bonsai.css@latest/dist/bonsai.min.css" rel="stylesheet">
-    <script data-main="app" src="lib/require.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text to Images</title>
+        <script data-main="app" src="lib/require.js"></script>
+    </head>
 
-<body>
-    <h1 id="title">Text to Images</h1>
-    <canvas id="preview" style="border: solid 1px black;"></canvas>
-    <form>
-        <legend>Basic controls for text to images</legend>
-        <div class="group">
+    <body>
+        <h1 id="title">Text to Images</h1>
+        <canvas id="preview" style="border: solid 1px black;"></canvas>
+        <form>
+            <legend>Basic controls for text to images</legend>
+
             <input type="text" id="word" placeholder="enter your word">
-            <button id="savebtn" class="pure-button pure-button-primary">Save Image</button>
-        </div>
+            <button id="savebtn" type="button">Save Image</button>
 
-        <legend>Advanced Options</legend>
-        <div class="group">
+            <legend>Advanced Options</legend>
+
             <label for="text-color">Text Color
-                <input type="color" name="text-color" id="text-color" value="orchid">
+                <input type="color" name="text-color" id="text-color" value="#ffffff">
             </label>
             <label for="bg-color">BG Color
-                <input type="color" name="bg-color" id="bg-color" value="orchid">
+                <input type="color" name="bg-color" id="bg-color" value="#000000">
             </label>
-        </div>
-    </form>
 
+            <label for="text-font">Choose a Font
+                <input type="text" name="text-font" id="text-font" placeholder="Serif is a safe default">
+            </label>
+            <button id="setfontbtn" type="button">Set Font</button>
 
-</body>
+        </form>
+
+    </body>
 
 </html>

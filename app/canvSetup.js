@@ -12,7 +12,7 @@ define( function() {
         'bgColor' : 'antiquewhite',
         'textColor' : '#154360',
         'textPxls' : 48,
-        'textFont' : 'San_Diego_Font',
+        'textFont' : 'Averia Libre',
         'textSetup' : function () {
             console.log('setting up text');
             ctx.font = `${this.textPxls}px ${this.textFont}`;
