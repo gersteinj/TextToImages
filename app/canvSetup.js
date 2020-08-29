@@ -8,11 +8,11 @@ define( function() {
         'canvas' : canvas,
         'context' : ctx,
         'padding' : 30,
-        'textString' : 'abcde',
-        'bgColor' : 'antiquewhite',
-        'textColor' : '#154360',
+        'textString' : 'Type something!',
+        'bgColor' : document.getElementById('bg-color').value,
+        'textColor' : document.getElementById('text-color').value,
         'textSize' : 48,
-        'textFont' : 'Averia Libre',
+        'textFont' : document.getElementById('text-font').value,
         'textSetup' : function () {
             console.log('setting up text');
             ctx.font = `${this.textSize}px ${this.textFont}`;
