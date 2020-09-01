@@ -6,62 +6,70 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Text to Images</title>
         <link rel="stylesheet" href="css/fontsheet.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <!-- <link rel="stylesheet" href="css/styles.css"> -->
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css"> -->
         <script data-main="app" src="lib/require.js"></script>
     </head>
 
-    <body>
-        <h1 id="title">Text to Images</h1>
-        <p>An updated version of my original Text to Images tool, this time as a web app so you don't need to install and run Python.</p>
+    <body class="px-5 py-5">
+        <h1 id="title" class="title">Text to Images</h1>
+        <p>This is an updated version of my original Text to Images tool, this time as a web app so you don't need to install and run Python.</p>
         <p>There is still work to be done on this, but for now you can save one image at a time. Your settings will not be deleted after a save, so you can make multiple images quickly. Scroll down to the bottom for more info if you're confused.</p>
 
-        <canvas id="preview"></canvas>
+        <canvas id="preview" class="my-5"></canvas>
         <form>
-            <fieldset>
-                <legend>Basic Controls</legend>
+            <fieldset class="mb-5">
+                <legend class="title is-4">Basic Controls</legend>
                 <input type="text" name="word" id="word" placeholder="enter your word">
                 <button id="savebtn" type="button">Save Image</button>
             </fieldset>
-            <fieldset>
-                <legend>Advanced Controls</legend>
-                <label for="text-color">Text Color</label>
-                <input type="color" name="text-color" id="text-color" value="#cccccc">
+            <fieldset class="mb-5">
+                <legend class="title is-4">Advanced Controls</legend>
+                <div id="color-section">
+                    <label for="text-color">Text Color</label>
+                    <input type="color" name="text-color" id="text-color" value="#cccccc">
 
-                <label for="bg-color">BG Color</label>
-                <input type="color" name="bg-color" id="bg-color" value="#333333">
-                
-                <label for="border-color">Border Color</label>
-                <input type="color" name="border-color" id="border-color" value="#999999">
+                    <label for="bg-color">BG Color</label>
+                    <input type="color" name="bg-color" id="bg-color" value="#333333">
 
-                <button id="font-select-toggle" type="button">font selection type</button>
-
-                <div id="custom-font" style="display:none">
-                    <label for="text-font">Enter your own font</label>
-                    <input type="text" name="text-font" id="text-font" placeholder="enter a font" value="sans-serif">
-                </div>
-                <div id="dropdown-font" style="display:block">
-                    <label for="text-dropdown">Choose a font</label>
-                    <select name="text-dropdown" id="text-dropdown">
-                        <option value="beth_ellen">Beth Ellen (fountain pen)</option>
-                        <option value="playtime">Playtime (casual)</option>
-                        <option value="league_script">League (cursive)</option>
-                        <option value="sans-serif" selected="selected">Default Sans Serif Font</option>
-                        <option value="serif">Default Serif Font</option>
-                        <option value="monospace">Default Monospace Font</option>
-                    </select>
+                    <label for="border-color">Border Color</label>
+                    <input type="color" name="border-color" id="border-color" value="#999999">
                 </div>
 
-                <label for="text-size">Text Size</label>
-                <input type="range" name="text-size" id="text-size" min="30" max="150" value="50">
+                <div id="graphics-section">
+                    <label for="border-size">Border Size</label>
+                    <input type="range" name="border-size" id="border-size" min="0" max="50" value="10">
+                </div>
                 
-                <label for="border-size">Border Size</label>
-                <input type="range" name="border-size" id="border-size" min="0" max="50" value="10">
+                <div id="font-section">
+                    <button id="font-select-toggle" type="button">font selection type</button>
+
+                    <div id="custom-font" style="display:none">
+                        <label for="text-font">Enter your own font</label>
+                        <input type="text" name="text-font" id="text-font" placeholder="enter a font" value="sans-serif">
+                    </div>
+                    <div id="dropdown-font" style="display:block">
+                        <label for="text-dropdown">Choose a font</label>
+                        <select name="text-dropdown" id="text-dropdown">
+                            <option value="beth_ellen">Beth Ellen (fountain pen)</option>
+                            <option value="playtime">Playtime (casual)</option>
+                            <option value="league_script">League (cursive)</option>
+                            <option value="sans-serif" selected="selected">Default Sans Serif Font</option>
+                            <option value="serif">Default Serif Font</option>
+                            <option value="monospace">Default Monospace Font</option>
+                        </select>
+                    </div>
+
+                    <label for="text-size">Text Size</label>
+                    <input type="range" name="text-size" id="text-size" min="30" max="150" value="50">
+                </div>
 
             </fieldset>
         </form>
 
-        <h2>Settings</h2>
-        <dl>
+        <h2 class="title is-4">Settings</h2>
+        <dl class="mb-5">
             <dt>Basic Controls</dt>
             <dd>Type in your word. Click save. This will open a save file dialog on your computer.</dd>
             <dt>Text Color</dt>
@@ -74,13 +82,14 @@
             <dd>This is a slider to control the size of the text</dd>
         </dl>
 
-        <h2>To do</h2>
+        <h2 class="title is-4">To do</h2>
         <p>I'm planning the following improvements and would love to hear your feedback on how this worked for you. For now, if you are seeing this, you probably have my contact info.</p>
         <ul>
             <li>Make multiple images from a comma separated list</li>
             <li>Load a text file</li>
             <li>Import/export settings</li>
         </ul>
+        
     </body>
 
 </html>
