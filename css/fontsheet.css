@@ -8,5 +8,22 @@
          url('/fonts/beth-ellen-2.0-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+
+    font-family: 'playtime';
+    src: url('/fonts/playtime-webfont.woff2') format('woff2'),
+         url('/fonts/playtime-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'league_script';
+    src: url('/fonts/leaguescript-webfont.woff2') format('woff2'),
+         url('/fonts/leaguescript-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
 }

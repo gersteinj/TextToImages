@@ -30,8 +30,18 @@
                 <label for="bg-color">BG Color</label>
                 <input type="color" name="bg-color" id="bg-color" value="#333333">
 
-                <label for="text-font">Choose a font</label>
+                <label for="text-font">Enter your own font</label>
                 <input type="text" name="text-font" id="text-font" placeholder="sans-serif is a safe default" value="sans-serif">
+
+                <label for="text-dropdown">Choose a font</label>
+                <select name="text-dropdown" id="text-dropdown">
+                    <option value="beth_ellen">Beth Ellen (fountain pen)</option>
+                    <option value="playtime">Playtime (casual)</option>
+                    <option value="league_script">League (cursive)</option>
+                    <option value="sans-serif" selected>Default Sans Serif Font</option>
+                    <option value="serif">Default Serif Font</option>
+                    <option value="monospace">Default Monospace Font</option>
+                </select>
 
                 <label for="text-size">Text Size</label>
                 <input type="range" name="text-size" id="text-size" min="30" max="150" value="50">

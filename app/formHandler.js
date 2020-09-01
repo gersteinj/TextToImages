@@ -17,6 +17,14 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
     })
 
+    document.getElementById('text-dropdown').addEventListener('input', function() {
+        console.log("you're entering something for font")
+        canvData.textFont = this.value;
+        canvData.textSetup();
+        canvData.canvasResize();
+        draw.redraw();
+    })
+
     // set text size
     document.getElementById('text-size').addEventListener('input', function() {
         console.log("You're setting the font size");
