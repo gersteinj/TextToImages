@@ -14,8 +14,8 @@
         <h1 id="title">Text to Images</h1>
         <p>An updated version of my original Text to Images tool, this time as a web app so you don't need to install and run Python.</p>
         <p>There is still work to be done on this, but for now you can save one image at a time. Your settings will not be deleted after a save, so you can make multiple images quickly. Scroll down to the bottom for more info if you're confused.</p>
-        
-        <canvas id="preview" style="border: solid 1px black;"></canvas>
+
+        <canvas id="preview"></canvas>
         <form>
             <fieldset>
                 <legend>Basic Controls</legend>
@@ -29,22 +29,33 @@
 
                 <label for="bg-color">BG Color</label>
                 <input type="color" name="bg-color" id="bg-color" value="#333333">
+                
+                <label for="border-color">Border Color</label>
+                <input type="color" name="border-color" id="border-color" value="#999999">
 
-                <label for="text-font">Enter your own font</label>
-                <input type="text" name="text-font" id="text-font" placeholder="sans-serif is a safe default" value="sans-serif">
+                <button id="font-select-toggle" type="button">font selection type</button>
 
-                <label for="text-dropdown">Choose a font</label>
-                <select name="text-dropdown" id="text-dropdown">
-                    <option value="beth_ellen">Beth Ellen (fountain pen)</option>
-                    <option value="playtime">Playtime (casual)</option>
-                    <option value="league_script">League (cursive)</option>
-                    <option value="sans-serif" selected>Default Sans Serif Font</option>
-                    <option value="serif">Default Serif Font</option>
-                    <option value="monospace">Default Monospace Font</option>
-                </select>
+                <div id="custom-font" style="display:none">
+                    <label for="text-font">Enter your own font</label>
+                    <input type="text" name="text-font" id="text-font" placeholder="enter a font" value="sans-serif">
+                </div>
+                <div id="dropdown-font" style="display:block">
+                    <label for="text-dropdown">Choose a font</label>
+                    <select name="text-dropdown" id="text-dropdown">
+                        <option value="beth_ellen">Beth Ellen (fountain pen)</option>
+                        <option value="playtime">Playtime (casual)</option>
+                        <option value="league_script">League (cursive)</option>
+                        <option value="sans-serif" selected="selected">Default Sans Serif Font</option>
+                        <option value="serif">Default Serif Font</option>
+                        <option value="monospace">Default Monospace Font</option>
+                    </select>
+                </div>
 
                 <label for="text-size">Text Size</label>
                 <input type="range" name="text-size" id="text-size" min="30" max="150" value="50">
+                
+                <label for="border-size">Border Size</label>
+                <input type="range" name="border-size" id="border-size" min="0" max="50" value="10">
 
             </fieldset>
         </form>
@@ -66,9 +77,9 @@
         <h2>To do</h2>
         <p>I'm planning the following improvements and would love to hear your feedback on how this worked for you. For now, if you are seeing this, you probably have my contact info.</p>
         <ul>
-        <li>Make multiple images from a comma separated list</li>
-        <li>Load a text file</li>
-        <li>Import/export settings</li>
+            <li>Make multiple images from a comma separated list</li>
+            <li>Load a text file</li>
+            <li>Import/export settings</li>
         </ul>
     </body>
 

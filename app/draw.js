@@ -10,6 +10,11 @@ define(function (require) {
         // draw background
         ctx.fillStyle = canvData.bgColor;
         ctx.fillRect(0, 0, canv.width, canv.height);
+        if (canvData.borderSize > 0) {
+            ctx.strokeStyle = canvData.borderColor;
+            ctx.lineWidth = canvData.borderSize;
+            ctx.strokeRect(0, 0, canv.width, canv.height);
+        }
     }
 
     function drawText() {
@@ -35,13 +40,6 @@ define(function (require) {
         'textString': canvData.textString
     };
 
-    // document.getElementById('word').addEventListener('input', function () {
-    //     console.log(this.value);
-    //     canvData.textString = this.value;
-    //     canvData.canvasResize();
-    //     drawBackground();
-    //     drawText();
-    // });
 });
 
 

@@ -7,10 +7,13 @@ define( function() {
     return {
         'canvas' : canvas,
         'context' : ctx,
+        'borderSize': document.getElementById('border-size').value,
         'padding' : 30,
         'textString' : 'Type something!',
         'bgColor' : document.getElementById('bg-color').value,
         'textColor' : document.getElementById('text-color').value,
+        'borderColor' : document.getElementById('border-color').value,
+        'fontDropdown' : true,
         'textSize' : 48,
         'textFont' : document.getElementById('text-font').value,
         'textSetup' : function () {
@@ -23,10 +26,10 @@ define( function() {
             this.textSetup();
             console.log('resizing canvas');
             
-            var textWidth = ctx.measureText(this.textString)['width'] + this.padding;
+            var textWidth = ctx.measureText(this.textString)['width'] + this.padding + this.borderSize * 2;
             var textHeightSizer = ctx.measureText('Qq')
             console.log(textHeightSizer);
-            var textHeight = textHeightSizer['actualBoundingBoxAscent'] + textHeightSizer['actualBoundingBoxDescent'] + this.padding;
+            var textHeight = textHeightSizer['actualBoundingBoxAscent'] + textHeightSizer['actualBoundingBoxDescent'] + this.padding + this.borderSize * 2;
             console.log(textHeight);
             canvas.width = textWidth;
             canvas.height = textHeight;

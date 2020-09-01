@@ -9,7 +9,7 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
     });
 
     // set font
-    document.getElementById('text-font').addEventListener('input', function() {
+    document.getElementById('text-font').addEventListener('input', function () {
         console.log("you're entering something for font")
         canvData.textFont = this.value;
         canvData.textSetup();
@@ -17,7 +17,7 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
     })
 
-    document.getElementById('text-dropdown').addEventListener('input', function() {
+    document.getElementById('text-dropdown').addEventListener('input', function () {
         console.log("you're entering something for font")
         canvData.textFont = this.value;
         canvData.textSetup();
@@ -26,10 +26,19 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
     })
 
     // set text size
-    document.getElementById('text-size').addEventListener('input', function() {
+    document.getElementById('text-size').addEventListener('input', function () {
         console.log("You're setting the font size");
         canvData.textSize = this.value;
         canvData.textSetup();
+        canvData.canvasResize();
+        draw.redraw();
+    })
+
+    // set border size
+    document.getElementById('border-size').addEventListener('input', function () {
+        console.log("You're setting the border size");
+        canvData.borderSize = this.value;
+        // canvData.textSetup();
         canvData.canvasResize();
         draw.redraw();
     })
@@ -61,12 +70,33 @@ define(['./draw', './canvSetup'], function (draw, canvData) {
         draw.redraw();
         console.log(this.parentElement);
     });
-    
+
     // bg color
     document.getElementById('bg-color').addEventListener('input', function () {
         canvData.bgColor = this.value;
         console.log(this.value);
         draw.redraw();
     });
+    
+    // border color
+    document.getElementById('border-color').addEventListener('input', function () {
+        canvData.borderColor = this.value;
+        console.log(this.value);
+        draw.redraw();
+    });
 
+    // toggle font selection type
+    document.getElementById('font-select-toggle').addEventListener('click', function () {
+        canvData.fontDropdown = !canvData.fontDropdown;
+        console.log(canvData.fontDropdown);
+
+        if (canvData.fontDropdown) {
+            document.getElementById('dropdown-font').style.display = 'block';
+            document.getElementById('custom-font').style.display = 'none';
+        } else {
+            document.getElementById('dropdown-font').style.display = 'none';
+            document.getElementById('custom-font').style.display = 'block';
+
+        }
+    });
 });
